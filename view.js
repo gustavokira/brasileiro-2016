@@ -167,46 +167,46 @@ function View () {
 						return 0;
 				}
 			}
-			var r = self.historico.append("g")
-			.attr("class","resultado")
-			.selectAll("circle")
-			.data(time)
-			.enter()
-			.append("circle")
-			.on("mouseover",function(d){
-				console.log(d);
+			// var r = self.historico.append("g")
+			// .attr("class","resultado")
+			// .selectAll("circle")
+			// .data(time)
+			// .enter()
+			// .append("circle")
+			// .on("mouseover",function(d){
+			// 	console.log(d);
 				
-				self.div.html(d.jogo.opp)
-				.style("opacity", .9)
-		         .style("left", (d3.event.pageX) + "px")
-		         .style("top", (d3.event.pageY - 28) + "px");
+			// 	self.div.html(d.jogo.opp)
+			// 	.style("opacity", .9)
+		 //         .style("left", (d3.event.pageX) + "px")
+		 //         .style("top", (d3.event.pageY - 28) + "px");
 		     
 
-			})
-			.attr("fill",function(d,i){
+			// })
+			// .attr("fill",function(d,i){
 				
-				if(d.jogo.pontos != -1) return self.lineColor.regular;
-				else return "#f00";
-			})
-			.attr("stroke",function(d){ 
-				if(d.jogo.pontos != -1) return self.lineColor.regular;
-				else return "none";
-			})
-			.attr("stroke-width",function(d){ 
-				if(d.jogo.pontos != -1) return 1;
-				else return "none";
-			})
-			.attr("cx",function(d,i){ 
-				return i*(2*self.width/self.maxX)+(self.width/self.maxX);
-			})
-			.attr("cy",function(d){ 
-				return self.y(d.posicao);
-			})
-			.attr("opacity",0)
-			.attr("r",function(d){ 
-				// return rsize(d.jogo.pontos);
-				return 4;
-			})
+			// 	if(d.jogo.pontos != -1) return self.lineColor.regular;
+			// 	else return "#f00";
+			// })
+			// .attr("stroke",function(d){ 
+			// 	if(d.jogo.pontos != -1) return self.lineColor.regular;
+			// 	else return "none";
+			// })
+			// .attr("stroke-width",function(d){ 
+			// 	if(d.jogo.pontos != -1) return 1;
+			// 	else return "none";
+			// })
+			// .attr("cx",function(d,i){ 
+			// 	return i*(2*self.width/self.maxX)+(self.width/self.maxX);
+			// })
+			// .attr("cy",function(d){ 
+			// 	return self.y(d.posicao);
+			// })
+			// .attr("opacity",0)
+			// .attr("r",function(d){ 
+			// 	// return rsize(d.jogo.pontos);
+			// 	return 4;
+			// })
 
 
 
@@ -251,28 +251,28 @@ this.addRodadasBars = function addRodadasBars(root, width, height, maxX, withLab
 		.attr("width",width/maxX)
 		.attr("text-anchor","middle")
 		.on("mouseover",function(d){
-			var rodada = d+1;
-			console.log(d)
+			// var rodada = d+1;
+			// console.log(d)
 
-			console.log(self.controller.raw.tabela[rodada]);
+			// console.log(self.controller.raw.tabela[rodada]);
 
-			var rotulos = self.historico.append("g")
-			.attr("id","middle-label")
-			.selectAll("text")
-			.data(Object.values(self.controller.raw.tabela[rodada]))
-			.enter()
-			.append("text")
-			.attr("x",function(d){
-				console.log(d);
-				return self.x(2*rodada)
-			})
-			.attr("y",function(d){ return self.y(d.posicao)+4 })
-			.attr("class","abbr")
-			.attr("id",function(d){
-				return "rodada_rotulo_"+d.time;
-			})
-			.attr("text-anchor","middle")
-			.text(function(d){ return d.posicao+"  "+d.time;});
+			// var rotulos = self.historico.append("g")
+			// .attr("id","middle-label")
+			// .selectAll("text")
+			// .data(Object.values(self.controller.raw.tabela[rodada]))
+			// .enter()
+			// .append("text")
+			// .attr("x",function(d){
+			// 	console.log(d);
+			// 	return self.x(2*rodada)
+			// })
+			// .attr("y",function(d){ return self.y(d.posicao)+4 })
+			// .attr("class","abbr")
+			// .attr("id",function(d){
+			// 	return "rodada_rotulo_"+d.time;
+			// })
+			// .attr("text-anchor","middle")
+			// .text(function(d){ return d.posicao+"  "+d.time;});
 
 		})
 		.text(function(d){ if(d < 38) return d+1;})
