@@ -65,7 +65,8 @@ function Controller () {
 		}
 
 
-		selected = self.times['PAL'];
+		// selected = self.times['PAL'];
+		// self.addToBuffer('PAL');
 	}
 
 	this.addToBuffer = function addToBuffer(abr){

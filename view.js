@@ -4,11 +4,11 @@ function View () {
 	this.maxX = 75;
 
 	this.controller;
-	this.margin = {top: 10, right: 60, bottom: 30, left: 50};
+	this.margin = {top: 10, right: 65, bottom: 30, left: 50};
 	this.width = 1300 - self.margin.left - self.margin.right,
 	this.height = 500 - self.margin.top - self.margin.bottom;
 
-	this.historico = d3.select("body").append("svg")
+	this.historico = d3.select("#content").append("svg")
 	.attr("id","historico")
 	.attr("width", self.width + self.margin.left + self.margin.right)
 	.attr("height", self.height + self.margin.top + self.margin.bottom)
@@ -25,7 +25,7 @@ function View () {
 		regular:"#ddd"
 	};
 
-	this.div = d3.select("body").append("div")
+	this.div = d3.select("#content").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 

@@ -6,9 +6,13 @@
 	<script src="controller.js"></script>
 	<script src="view.js"></script>
 	<style>
+		h1{
+			margin-left: 60px;
+			margin-bottom: 0;
+		}
 		body{
 			font-family: 'Roboto', sans-serif;
-			padding:50px 20px;
+			padding:10px 20px;
 		}
 		.line {
 			fill: none;
@@ -22,36 +26,52 @@
 			font-size: 11px;
 			font-weight: bold;
 		}
+		p{
+			font-size: 13px;
+			margin: 15px 0 25px 60px;
+			width: 50%;
+		}
+		#content{
+			margin-left: 15px;
+		}
 
 		div.tooltip {
-  position: absolute;
-  text-align: center;
-  width: 60px;
-  height: 28px;
-  padding: 2px;
-  font: 12px sans-serif;
-  background: lightsteelblue;
-  border: 0px;
-  border-radius: 8px;
-  pointer-events: none;
-}
+			position: absolute;
+			text-align: center;
+			width: 60px;
+			height: 28px;
+			padding: 2px;
+			font: 12px sans-serif;
+			background: lightsteelblue;
+			border: 0px;
+			border-radius: 8px;
+			pointer-events: none;
+		}
 	</style>
 </head>
 <body>
-	<script>
+<h1>Campeonato Brasileiro 2016 v0.1</h1>
+<p>
+	Clique nas abreviaturas para ver o caminho de cada time.
+	É possível selecionar no máximo cinco times por vez.
+</p>
 
-	var model = new Model();
-	var controller = new Controller();
-	var view = new View();
-	controller.view = view;
-	view.controller = controller;
-	
-	model.carregar()
+<div id="content"></div>
+
+<script>
+		var model = new Model();
+		var controller = new Controller();
+		var view = new View();
+		controller.view = view;
+		view.controller = controller;
+
+		model.carregar()
 		.then(controller.init)
 		.then(view.criarRotulosEsquerda)
 		.then(view.criarRotulosDireita)
 		.then(view.criarHistorico)
 
-</script>
+	</script>
 </body>
+	
 </html>
