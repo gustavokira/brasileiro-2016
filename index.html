@@ -50,15 +50,17 @@
 	</style>
 </head>
 <body>
-<h1>Campeonato Brasileiro 2016 v0.1</h1>
-<p>
-	Clique nas abreviaturas para ver o caminho de cada time.
-	É possível selecionar no máximo cinco times por vez.
-</p>
+	<h1>Campeonato Brasileiro 2016 v0.1</h1>
+	<p>
+		Clique nas abreviaturas para ver o caminho de cada time.
+		É possível selecionar no máximo cinco times por vez.
+	</p>
 
-<div id="content"></div>
+	<div id="content"></div>
+</body>
 
 <script>
+
 		var model = new Model();
 		var controller = new Controller();
 		var view = new View();
@@ -70,8 +72,7 @@
 		.then(view.criarRotulosEsquerda)
 		.then(view.criarRotulosDireita)
 		.then(view.criarHistorico)
-
+		
 	</script>
-</body>
-	
+
 </html>

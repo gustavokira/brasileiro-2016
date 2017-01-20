@@ -31,8 +31,11 @@ function View () {
 
 
 	this.criarRotulosEsquerda = function criarRotulosEsquerda(){
-		var primeiraRodada = Object.values(self.controller.raw.tabela[1]);
-
+				
+		var primeiraRodada = Object.keys(self.controller.raw.tabela[1]).map(function(key) {
+    		return self.controller.raw.tabela[1][key];
+		});
+		
 		var rotulos = self.historico.append("g")
 		.attr("id","labels")
 		.selectAll("text")
@@ -59,7 +62,12 @@ function View () {
 	}
 
 	this.criarRotulosDireita = function criarRotulosDireita(){
-		var ultimaRodada = Object.values(self.controller.raw.tabela[38]);
+		
+		var ultimaRodada = Object.keys(self.controller.raw.tabela[38]).map(function(key) {
+    		return self.controller.raw.tabela[38][key];
+		});
+
+
 		var endLabels = self.historico.append("g")
 		.attr("id","ranking")
 		.selectAll("text")
@@ -105,8 +113,11 @@ function View () {
 
 		var rankingBars = self.addRodadasBars(self.historico, self.width, self.height, self.maxX, true);
 
-		Object.values(self.controller.times).forEach(function(time){
-
+		Object.keys(self.controller.times)
+			.map(function(key){
+				return self.controller.times[key];
+			})
+		.forEach(function(time){	
 			var timeLineData = [];
 			time.forEach(function(t,i){
 
